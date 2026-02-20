@@ -1,0 +1,2 @@
+dist/SentimentApp.exe filter=lfs diff=lfs merge=lfs -text
+build/SentimentApp/SentimentApp.pkg filter=lfs diff=lfs merge=lfs -text
