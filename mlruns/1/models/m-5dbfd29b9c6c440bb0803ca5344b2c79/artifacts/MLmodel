@@ -1,0 +1,23 @@
+artifact_path: file:C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/mlruns/1/models/m-5dbfd29b9c6c440bb0803ca5344b2c79/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.6
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.9.0
+model_id: m-5dbfd29b9c6c440bb0803ca5344b2c79
+model_size_bytes: 5195803
+model_uuid: m-5dbfd29b9c6c440bb0803ca5344b2c79
+prompts: null
+run_id: f210562d0aeb44a2b1aeccd500c5ec49
+utc_time_created: '2026-02-23 14:55:12.923652'

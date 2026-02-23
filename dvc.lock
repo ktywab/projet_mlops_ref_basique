@@ -76,3 +76,144 @@ stages:
       md5: e246a73e7d9e5e3b0515ac2d4103b071.dir
       size: 68312177
       nfiles: 6
+  model_building:
+    cmd: python 
+      C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/model_building.py
+    deps:
+    - path: data/features/X_test_bow.npz
+      hash: md5
+      md5: d6d4269ed4b298cecedbc262b56dc89d
+      size: 2361548
+    - path: data/features/X_train_bow.npz
+      hash: md5
+      md5: 25eb844518acedb7dcf6b421bba40181
+      size: 10122331
+    - path: data/features/y_test.npy
+      hash: md5
+      md5: ee29fcd179273b0606688b439d10fa19
+      size: 654080
+    - path: data/features/y_train.npy
+      hash: md5
+      md5: 56af6051b7af8f341d941613fd7a7494
+      size: 2619416
+    - path: src\models\model_building.py
+      hash: md5
+      md5: 62d37be71f6903bdd2a499a6ac417029
+      size: 6163
+    params:
+      params.yaml:
+        lightgbm.learning_rate: 0.2
+        lightgbm.n_estimators: 800
+        lightgbm.reg_alpha: 0.1
+        lightgbm.reg_lambda: 0.5
+        model_building.features_type: bow
+        model_building.random_state: 42
+        xgboost.learning_rate: 0.2
+        xgboost.n_estimators: 800
+        xgboost.reg_alpha: 0.1
+        xgboost.reg_lambda: 0.5
+    outs:
+    - path: models/lgbm_bow_model.joblib
+      hash: md5
+      md5: 5a1ddb4131622ba9dd1531e90e07de02
+      size: 10528860
+    - path: models/xgb_bow_model.joblib
+      hash: md5
+      md5: 6939364fb89f0e2f2f5848a240b313f9
+      size: 5195803
+  model_evaluation:
+    cmd: python 
+      C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/model_evaluation.py
+    deps:
+    - path: data/features/X_test_bow.npz
+      hash: md5
+      md5: d6d4269ed4b298cecedbc262b56dc89d
+      size: 2361548
+    - path: data/features/y_test.npy
+      hash: md5
+      md5: ee29fcd179273b0606688b439d10fa19
+      size: 654080
+    - path: models/lgbm_bow_model.joblib
+      hash: md5
+      md5: 5a1ddb4131622ba9dd1531e90e07de02
+      size: 10528860
+    - path: models/xgb_bow_model.joblib
+      hash: md5
+      md5: 6939364fb89f0e2f2f5848a240b313f9
+      size: 5195803
+    - path: params.yaml
+      hash: md5
+      md5: 5fe4edcc4b4f64d78fa9acff357fba65
+      size: 1399
+    - path: src\models\model_evaluation.py
+      hash: md5
+      md5: 11240476a2cca3c8397ced7bbcf87e76
+      size: 9455
+    params:
+      params.yaml:
+        lightgbm.learning_rate: 0.2
+        lightgbm.n_estimators: 800
+        lightgbm.reg_alpha: 0.1
+        lightgbm.reg_lambda: 0.5
+        mlflow.experiment_name: sentiment-model-evaluation
+        mlflow.tracking_uri: sqlite:///mlflow.db
+        model_building.features_type: bow
+        xgboost.learning_rate: 0.2
+        xgboost.n_estimators: 800
+        xgboost.reg_alpha: 0.1
+        xgboost.reg_lambda: 0.5
+    outs:
+    - path: reports/metrics_summary.json
+      hash: md5
+      md5: 4283addc2affd51d8fc6d61caadd9f87
+      size: 439
+    - path: reports/mlflow_artifacts
+      hash: md5
+      md5: 0d2bcf799c87721dde467fd03c2fb135.dir
+      size: 15774646
+      nfiles: 6
+  register_model:
+    cmd: python 
+      C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/register_model.py
+    deps:
+    - path: models/lgbm_bow_model.joblib
+      hash: md5
+      md5: 5a1ddb4131622ba9dd1531e90e07de02
+      size: 10528860
+    - path: models/vectorizers/bow_vectorizer.joblib
+      hash: md5
+      md5: 05fddc0577058498491731da45177bb1
+      size: 1471206
+    - path: models/xgb_bow_model.joblib
+      hash: md5
+      md5: 6939364fb89f0e2f2f5848a240b313f9
+      size: 5195803
+    - path: params.yaml
+      hash: md5
+      md5: 5fe4edcc4b4f64d78fa9acff357fba65
+      size: 1399
+    - path: reports/metrics_summary.json
+      hash: md5
+      md5: 4283addc2affd51d8fc6d61caadd9f87
+      size: 439
+    - path: src\models\register_model.py
+      hash: md5
+      md5: b7beaf960864a68a59c6fa9398a677c0
+      size: 8578
+    params:
+      params.yaml:
+        mlflow.experiment_name: sentiment-model-evaluation
+        mlflow.registry_model_name: sentiment-classifier
+        mlflow.tracking_uri: sqlite:///mlflow.db
+        model_building.features_type: bow
+        register_model.metric_key: auc_ovr_macro
+    outs:
+    - path: models/production
+      hash: md5
+      md5: 09da24adc6504b1b52ec9d3cbfae2ffc.dir
+      size: 6667009
+      nfiles: 2
+    - path: reports/register_summary.json
+      hash: md5
+      md5: 33c010e6a05ae8732f1611d9f38aec9e
+      size: 971

@@ -39,3 +39,96 @@ stages:
     outs:
       - data/features
 
+
+  model_building:
+    cmd: python C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/model_building.py
+    deps:
+      - C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/model_building.py
+      - data/features/X_train_bow.npz
+      - data/features/X_test_bow.npz
+      - data/features/y_train.npy
+      - data/features/y_test.npy
+    params:
+      - model_building.features_type
+      - model_building.random_state
+      - xgboost.learning_rate
+      - xgboost.n_estimators
+      - xgboost.reg_alpha
+      - xgboost.reg_lambda
+      - lightgbm.learning_rate
+      - lightgbm.n_estimators
+      - lightgbm.reg_alpha
+      - lightgbm.reg_lambda
+    outs:
+      - models/xgb_bow_model.joblib
+      - models/lgbm_bow_model.joblib
+
+
+  model_evaluation:
+    cmd: python C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/model_evaluation.py # --serve-mlflow
+    deps:
+      - C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/model_evaluation.py
+
+      # modèles entraînés
+      - models/xgb_bow_model.joblib
+      - models/lgbm_bow_model.joblib
+
+      # données de test
+      - data/features/X_test_bow.npz
+      - data/features/y_test.npy
+
+      # paramètres
+      - params.yaml
+
+    params:
+      # features
+      - model_building.features_type
+
+      # MLflow
+      - mlflow.tracking_uri
+      - mlflow.experiment_name
+
+      # XGBoost (loggés dans MLflow)
+      - xgboost.learning_rate
+      - xgboost.n_estimators
+      - xgboost.reg_alpha
+      - xgboost.reg_lambda
+
+      # LightGBM (loggés dans MLflow)
+      - lightgbm.learning_rate
+      - lightgbm.n_estimators
+      - lightgbm.reg_alpha
+      - lightgbm.reg_lambda
+
+    outs:
+      # rapports locaux
+      - reports/metrics_summary.json
+      - reports/mlflow_artifacts
+
+
+  register_model:
+    cmd: python C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/register_model.py
+    deps:
+      - C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/models/register_model.py
+      - params.yaml
+
+      # résumé métriques (sortie de model_evaluation)
+      - reports/metrics_summary.json
+
+      # modèles entraînés
+      - models/xgb_bow_model.joblib
+      - models/lgbm_bow_model.joblib
+
+      # vectorizer BoW
+      - models/vectorizers/bow_vectorizer.joblib
+
+    params:
+      - model_building.features_type
+      - register_model.metric_key
+      - mlflow.tracking_uri
+      - mlflow.experiment_name
+      - mlflow.registry_model_name
+
+    outs:
+      - models/production
+      - reports/register_summary.json

@@ -1,0 +1,47 @@
+2026-02-23 11:46:03,721 | INFO | model_building | Loading features: bow
+2026-02-23 11:46:04,010 | INFO | model_building | X_train: (327411, 84564) | X_test: (81744, 84564)
+2026-02-23 11:46:04,016 | INFO | model_building | Detected num_class=3
+2026-02-23 11:46:04,016 | INFO | model_building | Training XGBoost | lr=0.2 | n_estimators=800 | reg_alpha=0.1 | reg_lambda=0.5
+2026-02-23 11:53:09,794 | INFO | model_building | Training LightGBM | lr=0.2 | n_estimators=800 | reg_alpha=0.1 | reg_lambda=0.5
+2026-02-23 11:53:09,850 | ERROR | model_building | Model building échoué.
+Traceback (most recent call last):
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\models\model_building.py", line 142, in main
+    lgbm_model.fit(X_train, y_train)
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\sklearn.py", line 1560, in fit
+    super().fit(
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\sklearn.py", line 1049, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\engine.py", line 297, in train
+    booster = Booster(params=params, train_set=train_set)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\basic.py", line 3656, in __init__
+    train_set.construct()
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\basic.py", line 2590, in construct
+    self._lazy_init(
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\basic.py", line 2183, in _lazy_init
+    self.__init_from_csr(data, params_str, ref_dataset)
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\basic.py", line 2398, in __init_from_csr
+    ptr_data, type_ptr_data, _ = _c_float_array(csr.data)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\lightgbm\basic.py", line 766, in _c_float_array
+    raise TypeError(f"Expected np.float32 or np.float64, met type({data.dtype})")
+TypeError: Expected np.float32 or np.float64, met type(int64)
+2026-02-23 12:04:54,042 | INFO | model_building | Loading features: bow
+2026-02-23 12:04:54,435 | INFO | model_building | X_train: (327411, 84564) | X_test: (81744, 84564)
+2026-02-23 12:04:54,436 | INFO | model_building | X_train dtype: int64 | X_test dtype: int64
+2026-02-23 12:04:54,442 | INFO | model_building | Detected num_class=3
+2026-02-23 12:04:54,443 | INFO | model_building | Training XGBoost | lr=0.2 | n_estimators=800 | reg_alpha=0.1 | reg_lambda=0.5
+2026-02-23 12:12:26,169 | INFO | model_building | Casting X_train from int64 -> float32 (LightGBM compatibility)
+2026-02-23 12:12:26,402 | INFO | model_building | Casting X_test from int64 -> float32 (LightGBM compatibility)
+2026-02-23 12:12:26,409 | INFO | model_building | Training LightGBM | lr=0.2 | n_estimators=800 | reg_alpha=0.1 | reg_lambda=0.5
+2026-02-23 12:16:09,949 | INFO | model_building | Model building terminé (2 modèles sauvegardés, pas d'évaluation ici).
+2026-02-23 14:45:03,155 | INFO | model_building | Loading features: bow
+2026-02-23 14:45:03,329 | INFO | model_building | X_train: (327411, 84564) | X_test: (81744, 84564)
+2026-02-23 14:45:03,329 | INFO | model_building | X_train dtype: int64 | X_test dtype: int64
+2026-02-23 14:45:03,342 | INFO | model_building | Detected num_class=3
+2026-02-23 14:45:03,342 | INFO | model_building | Training XGBoost | lr=0.2 | n_estimators=800 | reg_alpha=0.1 | reg_lambda=0.5
+2026-02-23 14:51:58,459 | INFO | model_building | Casting X_train from int64 -> float32 (LightGBM compatibility)
+2026-02-23 14:51:58,649 | INFO | model_building | Casting X_test from int64 -> float32 (LightGBM compatibility)
+2026-02-23 14:51:58,657 | INFO | model_building | Training LightGBM | lr=0.2 | n_estimators=800 | reg_alpha=0.1 | reg_lambda=0.5
+2026-02-23 14:54:34,520 | INFO | model_building | Model building terminé (2 modèles sauvegardés).
