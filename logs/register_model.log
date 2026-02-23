@@ -1,0 +1,36 @@
+2026-02-23 15:40:50,327 | INFO | register_model | Best model: xgb | auc_ovr_macro=0.9930084528439043
+2026-02-23 15:40:50,333 | INFO | register_model | Promoted model -> models\production\model.joblib
+2026-02-23 15:40:50,333 | INFO | register_model | Promoted vectorizer -> models\production\vectorizer.joblib
+2026-02-23 15:40:50,333 | INFO | register_model | Registering into MLflow Model Registry | name=sentiment-classifier | tracking_uri=sqlite:///mlflow.db
+2026-02-23 15:40:50,333 | ERROR | register_model | Register_model échoué.
+Traceback (most recent call last):
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\models\register_model.py", line 207, in main
+    registry_info = register_in_mlflow_registry(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\models\register_model.py", line 119, in register_in_mlflow_registry
+    mlflow.set_tracking_uri(tracking_uri)
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'mlflow' where it is not associated with a value
+2026-02-23 15:41:27,119 | INFO | register_model | Best model: xgb | auc_ovr_macro=0.9930084528439043
+2026-02-23 15:41:27,125 | INFO | register_model | Promoted model -> models\production\model.joblib
+2026-02-23 15:41:27,125 | INFO | register_model | Promoted vectorizer -> models\production\vectorizer.joblib
+2026-02-23 15:41:27,126 | INFO | register_model | Registering into MLflow Model Registry | name=sentiment-classifier | tracking_uri=sqlite:///mlflow.db
+2026-02-23 15:41:27,126 | ERROR | register_model | Register_model échoué.
+Traceback (most recent call last):
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\models\register_model.py", line 207, in main
+    registry_info = register_in_mlflow_registry(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\models\register_model.py", line 119, in register_in_mlflow_registry
+    mlflow.set_tracking_uri(tracking_uri)
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'mlflow' where it is not associated with a value
+2026-02-23 15:47:07,509 | INFO | register_model | Best model: xgb | auc_ovr_macro=0.9930084528439043
+2026-02-23 15:47:07,515 | INFO | register_model | Promoted model -> models\production\model.joblib
+2026-02-23 15:47:07,515 | INFO | register_model | Promoted vectorizer -> models\production\vectorizer.joblib
+2026-02-23 15:47:07,515 | INFO | register_model | Registering into MLflow Model Registry | name=sentiment-classifier | tracking_uri=sqlite:///mlflow.db
+2026-02-23 15:47:31,560 | INFO | register_model | Register_model terminé (promotion + registry).
+2026-02-23 15:55:07,853 | INFO | register_model | Best model: xgb | auc_ovr_macro=0.9930084528439043
+2026-02-23 15:55:07,859 | INFO | register_model | Promoted model -> models\production\model.joblib
+2026-02-23 15:55:07,859 | INFO | register_model | Promoted vectorizer -> models\production\vectorizer.joblib
+2026-02-23 15:55:07,859 | INFO | register_model | Registering into MLflow Model Registry | name=sentiment-classifier | tracking_uri=sqlite:///mlflow.db
+2026-02-23 15:55:19,635 | INFO | register_model | Register_model terminé (promotion + registry).

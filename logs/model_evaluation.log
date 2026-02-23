@@ -1,0 +1,26 @@
+2026-02-23 14:54:41,082 | INFO | model_evaluation | MLflow tracking_uri=file:./mlruns | experiment=sentiment-model-evaluation
+2026-02-23 14:54:41,082 | INFO | model_evaluation | Loading test data: bow
+2026-02-23 14:54:41,123 | INFO | model_evaluation | Loading models: models\xgb_bow_model.joblib | models\lgbm_bow_model.joblib
+2026-02-23 14:54:41,470 | INFO | model_evaluation | Evaluating XGBoost...
+2026-02-23 14:55:00,465 | INFO | model_evaluation | XGB metrics: {'accuracy': 0.9357995693873556, 'f1_macro': 0.9216164087474015, 'f1_weighted': 0.9350734716921623, 'auc_ovr_macro': 0.9930084528439043, 'auc_ovr_weighted': 0.9918747021420243}
+2026-02-23 14:55:00,466 | INFO | model_evaluation | Evaluating LightGBM...
+2026-02-23 14:55:25,023 | INFO | model_evaluation | LGBM metrics: {'accuracy': 0.923419455862204, 'f1_macro': 0.9082648625601557, 'f1_weighted': 0.9234090434043464, 'auc_ovr_macro': 0.9927540690948887, 'auc_ovr_weighted': 0.9916874657731409}
+2026-02-23 14:55:25,024 | INFO | model_evaluation | Model evaluation terminé + runs MLflow créés.
+2026-02-23 15:02:34,488 | INFO | model_evaluation | MLflow tracking_uri=file:./mlruns | experiment=sentiment-model-evaluation
+2026-02-23 15:02:34,489 | INFO | model_evaluation | Loading test data: bow
+2026-02-23 15:02:34,528 | INFO | model_evaluation | Loading models: models\xgb_bow_model.joblib | models\lgbm_bow_model.joblib
+2026-02-23 15:02:34,770 | INFO | model_evaluation | Evaluating XGBoost...
+2026-02-23 15:02:53,214 | INFO | model_evaluation | XGB metrics: {'accuracy': 0.9357995693873556, 'f1_macro': 0.9216164087474015, 'f1_weighted': 0.9350734716921623, 'auc_ovr_macro': 0.9930084528439043, 'auc_ovr_weighted': 0.9918747021420243}
+2026-02-23 15:02:53,215 | INFO | model_evaluation | Evaluating LightGBM...
+2026-02-23 15:03:15,759 | INFO | model_evaluation | LGBM metrics: {'accuracy': 0.923419455862204, 'f1_macro': 0.9082648625601557, 'f1_weighted': 0.9234090434043464, 'auc_ovr_macro': 0.9927540690948887, 'auc_ovr_weighted': 0.9916874657731409}
+2026-02-23 15:03:15,762 | INFO | model_evaluation | Model evaluation terminé + runs MLflow créés.
+2026-02-23 15:03:17,059 | INFO | model_evaluation | MLflow UI lancé: http://127.0.0.1:5000
+2026-02-23 15:03:17,059 | INFO | model_evaluation | Pour arrêter MLflow UI, ferme le process Python (ou CTRL+C dans le terminal).
+2026-02-23 15:40:02,938 | INFO | model_evaluation | MLflow tracking_uri=sqlite:///mlflow.db | experiment=sentiment-model-evaluation
+2026-02-23 15:40:02,938 | INFO | model_evaluation | Loading test data: bow
+2026-02-23 15:40:03,016 | INFO | model_evaluation | Loading models: models\xgb_bow_model.joblib | models\lgbm_bow_model.joblib
+2026-02-23 15:40:03,478 | INFO | model_evaluation | Evaluating XGBoost...
+2026-02-23 15:40:24,782 | INFO | model_evaluation | XGB metrics: {'accuracy': 0.9357995693873556, 'f1_macro': 0.9216164087474015, 'f1_weighted': 0.9350734716921623, 'auc_ovr_macro': 0.9930084528439043, 'auc_ovr_weighted': 0.9918747021420243}
+2026-02-23 15:40:24,783 | INFO | model_evaluation | Evaluating LightGBM...
+2026-02-23 15:40:45,715 | INFO | model_evaluation | LGBM metrics: {'accuracy': 0.923419455862204, 'f1_macro': 0.9082648625601557, 'f1_weighted': 0.9234090434043464, 'auc_ovr_macro': 0.9927540690948887, 'auc_ovr_weighted': 0.9916874657731409}
+2026-02-23 15:40:45,718 | INFO | model_evaluation | Model evaluation terminé + runs MLflow créés.
