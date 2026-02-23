@@ -1,0 +1,41 @@
+stages:
+
+  data_ingestion:
+    cmd: python C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/data_ingestion.py
+    deps:
+      - C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/data_ingestion.py
+    params:
+      - data_ingestion.test_size
+    outs:
+      - data/raw
+      
+  data_preprocessing:
+    cmd: python C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/data_preprocessing.py
+    deps:
+      - C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/data_preprocessing.py
+      - data/raw/train.csv
+      - data/raw/test.csv
+    params:
+      - preprocess.text_col
+      - preprocess.out_col
+      - preprocess.min_words
+    outs:
+      - data/processed
+
+    
+  feature_engineering:
+    cmd: python C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/feature_engineering.py
+    deps:
+      - C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/feature_engineering.py
+      - data/processed/train_processed.csv
+      - data/processed/test_processed.csv
+    params:
+      - feature_engineering.text_col
+      - feature_engineering.label_col
+      - feature_engineering.min_df
+      - feature_engineering.max_df
+      - feature_engineering.token_pattern
+      - feature_engineering.ngram_range
+    outs:
+      - data/features
+

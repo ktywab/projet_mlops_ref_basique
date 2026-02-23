@@ -1,0 +1,78 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python 
+      C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/data_ingestion.py
+    deps:
+    - path: src\data\data_ingestion.py
+      hash: md5
+      md5: 5ea98660b82ff2f40c2a93b49aef48a8
+      size: 5100
+    params:
+      params.yaml:
+        data_ingestion.test_size: 0.2
+    outs:
+    - path: data/raw
+      hash: md5
+      md5: 1bd1991180935c58bcf2856322dd1bfe.dir
+      size: 42109569
+      nfiles: 2
+  data_preprocessing:
+    cmd: python 
+      C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/data_preprocessing.py
+    deps:
+    - path: data/raw/test.csv
+      hash: md5
+      md5: 37262d03b7063b440d7a8c2d4a667e2e
+      size: 8411051
+    - path: data/raw/train.csv
+      hash: md5
+      md5: 5b8028b057aa0caf6cee581fcd53f547
+      size: 33698518
+    - path: src\data\data_preprocessing.py
+      hash: md5
+      md5: 2668891abe77f30f903f34c095678171
+      size: 5910
+    params:
+      params.yaml:
+        preprocess.min_words: 3
+        preprocess.out_col: text_norm
+        preprocess.text_col: text
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 67496e32e20bbec73904a34e8c0d9377.dir
+      size: 68110975
+      nfiles: 2
+  feature_engineering:
+    cmd: python 
+      C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/src/data/feature_engineering.py
+    deps:
+    - path: data/processed/test_processed.csv
+      hash: md5
+      md5: 5289322cd0a32ceb1763e146decdd286
+      size: 13595691
+    - path: data/processed/train_processed.csv
+      hash: md5
+      md5: a66883c803d9bc76c11f52d6a1b0b2e9
+      size: 54515284
+    - path: src\data\feature_engineering.py
+      hash: md5
+      md5: ba33b78fcdb312e2f0cdaf542c61f900
+      size: 5364
+    params:
+      params.yaml:
+        feature_engineering.label_col: label
+        feature_engineering.max_df: 0.9
+        feature_engineering.min_df: 5
+        feature_engineering.ngram_range:
+        - 1
+        - 2
+        feature_engineering.text_col: text_norm
+        feature_engineering.token_pattern: \b[a-z]{3,15}\b
+    outs:
+    - path: data/features
+      hash: md5
+      md5: e246a73e7d9e5e3b0515ac2d4103b071.dir
+      size: 68312177
+      nfiles: 6

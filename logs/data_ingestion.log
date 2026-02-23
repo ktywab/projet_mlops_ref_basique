@@ -1,0 +1,109 @@
+2026-02-20 16:56:57 | INFO | data_ingestion | Loaded params: data_ingestion.test_size=0.2
+2026-02-20 16:56:57 | INFO | data_ingestion | Loading data from: C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\tweet_emotions.csv
+2026-02-20 16:56:57 | ERROR | data_ingestion | Fichier introuvable: C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\tweet_emotions.csv
+Traceback (most recent call last):
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\data\data_ingestion.py", line 51, in load_data
+    df = pd.read_csv(data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\abotsi\\Desktop\\Projet_pro\\projet_mlops_ref_basique\\tweet_emotions.csv'
+2026-02-20 16:56:57 | ERROR | data_ingestion | Data ingestion échoué.
+Traceback (most recent call last):
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\data\data_ingestion.py", line 130, in main
+    df = load_data(
+         ^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\data\data_ingestion.py", line 51, in load_data
+    df = pd.read_csv(data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\abotsi\\Desktop\\Projet_pro\\projet_mlops_ref_basique\\tweet_emotions.csv'
+2026-02-20 16:59:33 | INFO | data_ingestion | Loaded params: data_ingestion.test_size=0.2
+2026-02-20 16:59:33 | INFO | data_ingestion | Loading data from: C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\text.csv
+2026-02-20 16:59:33 | ERROR | data_ingestion | Fichier introuvable: C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\text.csv
+Traceback (most recent call last):
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\data\data_ingestion.py", line 51, in load_data
+    df = pd.read_csv(data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\abotsi\\Desktop\\Projet_pro\\projet_mlops_ref_basique\\text.csv'
+2026-02-20 16:59:33 | ERROR | data_ingestion | Data ingestion échoué.
+Traceback (most recent call last):
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\data\data_ingestion.py", line 130, in main
+    df = load_data(
+         ^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\src\data\data_ingestion.py", line 51, in load_data
+    df = pd.read_csv(data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\abotsi\Desktop\Projet_pro\env_usa_visa\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\abotsi\\Desktop\\Projet_pro\\projet_mlops_ref_basique\\text.csv'
+2026-02-20 17:01:06 | INFO | data_ingestion | Loaded params: data_ingestion.test_size=0.2
+2026-02-20 17:01:06 | INFO | data_ingestion | Loading data from: C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\data\text.csv
+2026-02-20 17:01:07 | INFO | data_ingestion | Data loaded. Shape=(416809, 3)
+2026-02-20 17:01:07 | INFO | data_ingestion | Preprocessing data...
+2026-02-20 17:01:07 | INFO | data_ingestion | Column 'Unnamed: 0' dropped.
+2026-02-20 17:01:07 | INFO | data_ingestion | Label distribution after mapping:
+label
+0    262254
+1     91871
+2     62684
+Name: count, dtype: int64
+2026-02-20 17:01:07 | INFO | data_ingestion | Preprocessing done.
+2026-02-20 17:01:08 | INFO | data_ingestion | Saved train data to: C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\data\raw\train.csv (shape=(333447, 2))
+2026-02-20 17:01:08 | INFO | data_ingestion | Saved test data to: C:\Users\abotsi\Desktop\Projet_pro\projet_mlops_ref_basique\data\raw\test.csv (shape=(83362, 2))
+2026-02-20 17:01:08 | INFO | data_ingestion | Data ingestion terminé avec succès.
