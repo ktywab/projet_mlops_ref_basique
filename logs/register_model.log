@@ -34,3 +34,13 @@ UnboundLocalError: cannot access local variable 'mlflow' where it is not associa
 2026-02-23 15:55:07,859 | INFO | register_model | Promoted vectorizer -> models\production\vectorizer.joblib
 2026-02-23 15:55:07,859 | INFO | register_model | Registering into MLflow Model Registry | name=sentiment-classifier | tracking_uri=sqlite:///mlflow.db
 2026-02-23 15:55:19,635 | INFO | register_model | Register_model terminé (promotion + registry).
+2026-02-24 11:42:27,381 | INFO | register_model | Best model: xgb | auc_ovr_macro=0.9930084528439043
+2026-02-24 11:42:27,391 | INFO | register_model | Promoted model -> models\production\model.joblib
+2026-02-24 11:42:27,392 | INFO | register_model | Promoted vectorizer -> models\production\vectorizer.joblib
+2026-02-24 11:42:27,392 | INFO | register_model | Registering into MLflow Model Registry | name=sentiment-classifier | tracking_uri=sqlite:///mlflow.db
+2026-02-24 11:42:49,563 | INFO | register_model | Register_model terminé (promotion + registry).
+2026-02-24 11:54:45,977 | INFO | register_model | Best model: lgbm | auc_ovr_macro=0.9927540690948887
+2026-02-24 11:54:45,988 | INFO | register_model | Promoted model -> models\production\model.joblib
+2026-02-24 11:54:45,988 | INFO | register_model | Promoted vectorizer -> models\production\vectorizer.joblib
+2026-02-24 11:54:45,989 | INFO | register_model | Registering into MLflow Model Registry | name=sentiment-classifier | tracking_uri=sqlite:///mlflow.db
+2026-02-24 11:55:00,454 | INFO | register_model | Register_model terminé (promotion + registry).

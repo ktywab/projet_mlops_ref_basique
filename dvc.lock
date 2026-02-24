@@ -198,8 +198,8 @@ stages:
       size: 439
     - path: src\models\register_model.py
       hash: md5
-      md5: b7beaf960864a68a59c6fa9398a677c0
-      size: 8578
+      md5: a55fa57af2f411e3d1d8905a3a344530
+      size: 8633
     params:
       params.yaml:
         mlflow.experiment_name: sentiment-model-evaluation
@@ -210,10 +210,10 @@ stages:
     outs:
     - path: models/production
       hash: md5
-      md5: 09da24adc6504b1b52ec9d3cbfae2ffc.dir
-      size: 6667009
+      md5: f3065d310c4a1d71731efcc4b91f4e51.dir
+      size: 12000066
       nfiles: 2
     - path: reports/register_summary.json
       hash: md5
-      md5: 33c010e6a05ae8732f1611d9f38aec9e
-      size: 971
+      md5: b86e63c853b75331f7a0de652e11b78f
+      size: 972

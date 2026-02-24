@@ -64,8 +64,12 @@ def choose_best_model(metrics_summary_path: str, metric_key: str):
             f"Disponibles xgb={list(summary['xgb'].keys())}, lgbm={list(summary['lgbm'].keys())}"
         )
 
-    best = "xgb" if xgb_score >= lgbm_score else "lgbm"
-    best_score = xgb_score if best == "xgb" else lgbm_score
+    ## best = "xgb" if xgb_score > lgbm_score else "lgbm"
+    ## best_score = xgb_score if best == "xgb" else lgbm_score
+
+    #Pour la prod offline
+    best = "lgbm"
+    best_score = lgbm_score
 
     return best, float(best_score), summary
 

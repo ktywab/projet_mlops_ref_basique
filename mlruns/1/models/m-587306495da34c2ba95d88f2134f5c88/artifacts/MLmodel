@@ -1,0 +1,23 @@
+artifact_path: file:C:/Users/abotsi/Desktop/Projet_pro/projet_mlops_ref_basique/mlruns/1/models/m-587306495da34c2ba95d88f2134f5c88/artifacts
+flavors:
+  lightgbm:
+    code: null
+    data: model.pkl
+    lgb_version: 4.6.0
+    model_class: lightgbm.sklearn.LGBMClassifier
+    serialization_format: cloudpickle
+    skops_trusted_types: null
+  python_function:
+    data: model.pkl
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.12.6
+mlflow_version: 3.9.0
+model_id: m-587306495da34c2ba95d88f2134f5c88
+model_size_bytes: 10528757
+model_uuid: m-587306495da34c2ba95d88f2134f5c88
+prompts: null
+run_id: a5ea9f2bc99745868fe0bdb1492a5d3f
+utc_time_created: '2026-02-24 10:54:49.684435'
