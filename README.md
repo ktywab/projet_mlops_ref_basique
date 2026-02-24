@@ -14,3 +14,7 @@ Plus ?   --hidden-import=lightgbm.sklearn ^
 Plus ?   --add-data "models\production;models\production" ^
 Plus ?   --add-data "src\app\nltk_data;nltk_data" ^
 Plus ?   src\app\gui.py
+
+
+# Emplacement du fichier .exe
+projet_mlops_ref_basique\dist
